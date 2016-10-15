@@ -156,7 +156,7 @@ module.exports = function(grunt) {
         // Note: There doesn't seem to be an available SWC library that defines the YouTube player API.
         //       Remove the -strict compiler option to see warnings coming from YouTube API calls.
         //
-        flexPath: '../flex_sdk_4.6',
+        flexPath: '/usr/local/flex_sdk_4.6',
         buildFlashCommand: [
             '<%= flexPath %>/bin/mxmlc -strict=false -compiler.debug -warnings=true',
             'src/flash/FlashMediaElement.as -o <%= flashOut %>',

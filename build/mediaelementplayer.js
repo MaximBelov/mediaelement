@@ -561,7 +561,7 @@ if (typeof jQuery != 'undefined') {
 			t.killControlsTimer('start');
 
 			t.controlsTimer = setTimeout(function() {
-				//
+				//console.log('timer fired');
 				t.hideControls();
 				t.killControlsTimer('hide');
 			}, timeout);
@@ -659,8 +659,8 @@ if (typeof jQuery != 'undefined') {
 						} catch (e) {
 							// TODO: report control error
 							//throw e;
-							
-							
+							console.log('error building ' + feature);
+							console.log(e);
 						}
 					}
 				}
@@ -697,7 +697,7 @@ if (typeof jQuery != 'undefined') {
 						// create callback here since it needs access to current
 						// MediaElement object
 						t.clickToPlayPauseCallback = function() {
-							//
+							//console.log('media clicked', t.media, t.media.paused);
 
 							if (t.options.clickToPlayPause) {
 								if (t.media.paused) {
@@ -1500,8 +1500,8 @@ if (typeof jQuery != 'undefined') {
 					} catch (e) {
 						// TODO: report control error
 						//throw e;
-						//
-						//
+						//console.log('error building ' + feature);
+						//console.log(e);
 					}
 				}
 			}
@@ -1540,7 +1540,7 @@ if (typeof jQuery != 'undefined') {
 			var t = this;
 			// webkit has trouble doing this without a delay
 			setTimeout(function () {
-				//
+				//console.log("resetSize");
 				t.setPlayerSize(t.width, t.height);
 				t.setControlsSize();
 			}, 50);
@@ -3402,7 +3402,7 @@ if (typeof jQuery != 'undefined') {
 
 				if (!img.is(':visible') && !img.is(':animated')) {
 
-					//
+					//console.log('showing existing slide');
 
 					img.fadeIn()
 						.siblings(':visible')
@@ -3956,7 +3956,7 @@ $.extend(mejs.MepDefaults,
 			});	
 			player.contextMenu.bind('mouseleave', function() {
 
-				//
+				//console.log('context hover out');
 				player.startContextMenuTimer();
 				
 			});		
@@ -3976,7 +3976,7 @@ $.extend(mejs.MepDefaults,
 		
 		contextMenuTimeout: null,
 		startContextMenuTimer: function() {
-			//
+			//console.log('startContextMenuTimer');
 			
 			var t = this;
 			
@@ -3990,7 +3990,7 @@ $.extend(mejs.MepDefaults,
 		killContextMenuTimer: function() {
 			var timer = this.contextMenuTimer;
 			
-			//
+			//console.log('killContextMenuTimer', timer);
 			
 			if (timer != null) {				
 				clearTimeout(timer);
